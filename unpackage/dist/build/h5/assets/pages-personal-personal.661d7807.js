@@ -1,0 +1,1 @@
+import{o as a,c as e,w as r,b as s,e as t}from"./index.22aa5745.js";import{_ as o}from"./plugin-vue_export-helper.21dcd24c.js";var d=o({data:()=>({}),methods:{}},[["render",function(o,d,n,u,l,p){const c=t;return a(),e(c,null,{default:r((()=>[s("我是个人中心页")])),_:1})}]]);export{d as default};

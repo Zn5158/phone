@@ -1,0 +1,1 @@
+import{o as a,c as e,w as r,a as s,v as t,e as o}from"./index.22aa5745.js";import{_ as c}from"./plugin-vue_export-helper.21dcd24c.js";var n=c({name:"webview",data:()=>({})},[["render",function(c,n,d,l,p,i){const m=t,u=o;return a(),e(u,null,{default:r((()=>[s(m,{src:"https://dycharts.com/vis/protocol.html"})])),_:1})}]]);export{n as default};

@@ -1,0 +1,1 @@
+<view><web-view src="{{a}}">123</web-view></view>

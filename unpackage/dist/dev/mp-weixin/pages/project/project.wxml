@@ -1,0 +1,1 @@
+<button type="primary" bindtap="{{a}}">登录/注册</button><login wx:if="{{d}}" bindclickMask="{{b}}" bindback="{{c}}" u-i="1acb887f-0" bind:__l="__l" u-p="{{d}}"></login>

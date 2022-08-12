@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/project/project",
+    "pages/personal/personal",
+    "pages/index/waken",
+    "pages/index/result",
+    "pages/webview/webview"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/project/project",
+        "text": "我的项目"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
