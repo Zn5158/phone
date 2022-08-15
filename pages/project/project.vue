@@ -6,7 +6,7 @@
 		</view>
 	</view>
 	<view class="page-login" v-if='isLogin'>
-		<view class="space-select" @click='handlerSelect'>
+		<!-- <view class="space-select" @click='handlerSelect'>
 			{{spaceName}}
 			<uni-icons class='icon-arrow' :type="arrow" color='#fff' size="15"></uni-icons>
 			<view class="space-container" v-if="arrow == 'top'">
@@ -14,6 +14,13 @@
 					{{item.name}}
 					<uni-icons v-if='spaceId == item.id' class='icon-check' type="checkmarkempty" color='#517CEF' size="15"></uni-icons>
 				</view>
+			</view>
+		</view> -->
+		<view class="title">
+			<view class="icon-user"></view>
+			<view class="title-space">{{spaceName}}</view>
+			<view class="icon-bg fr" @click='goIndexWake'>
+				<image class="search-icon" src="../../static/icon-search.png" mode="widthFix"></image>
 			</view>
 		</view>
 		<tab :modelData='tabData' @change='changeTab'></tab>
@@ -33,7 +40,9 @@
 			<view class="page-item">
 				<view class="page-item-bg">
 					<view class='icon-more' @click.stop="showMore=true">
-						<uni-icons type="more" size="20"></uni-icons>
+						<text class="points"></text>
+						<text class="points"></text>
+						<text class="points"></text>
 					</view>
 				</view>
 				<view class="page-item-label">折线图</view>
@@ -58,12 +67,14 @@
 		</view>
 	</view>
 	<login :isMask='isMask' @clickMask='closeMask' @back='back'></login>
+	<bar currentTab='1'></bar>
 </template>
 
 <script>
 	//引入组件
 	import login from "/components/login/login.vue";
 	import tab from '/components/tab/tab.vue';
+	import bar from'/components/bar/bar.vue';
 	export default {
 		data() {
 			return {
@@ -90,7 +101,7 @@
 						label: '图文'
 					}
 				],
-				showMore: true
+				showMore: false
 			}
 		},
 		onLoad() {
@@ -161,6 +172,42 @@
 	.page-login {
 		width: 100%;
 		height: 100vh;
+		box-sizing: border-box;
+		padding: 30rpx 45rpx 30rpx 45rpx;
+		.title {
+			height: 74rpx;
+			.icon-user {
+				width: 74rpx;
+				height: 74rpx;
+				border-radius: 50%;
+				float: left;
+				background: #3963ff;
+				margin-right: 24rpx;
+			}
+			.title-space {
+				padding-top: 16rpx;
+				height: 32rpx;
+				font-size: 32rpx;
+				font-family: PingFangSC, PingFangSC-Semibold;
+				float: left;
+			}
+			.icon-bg {
+				float: right;
+				width: 70rpx;
+				height: 70rpx;
+				background: #eff1f5;
+				border-radius: 50%;
+				text-align: center;
+			
+				.search-icon {
+					width: 32rpx;
+					margin-top: 19rpx;
+				}
+				&.fr {
+					float: right;
+				}
+			}
+		}
 		.space-select {
 			width: 100%;
 			height: 80rpx;
@@ -202,26 +249,46 @@
 			}
 		}
 		.page-list {
-			padding:15rpx 20rpx;
+			padding:15rpx 0;
 			.page-item {
 				display: inline-block;
-				width: 325rpx;
-				margin: 0 15rpx;
 				margin-top: 10rpx;
+				margin-right: 34rpx;
+				&:nth-of-type(2n) {
+					margin-right: 0;
+				}
 				.page-item-bg {
-					height: 240rpx;
-					background: #EEEFEF;
-					border-radius: 6rpx;
+					width: 313rpx;
+					height: 313rpx;
+					background: #f6f8fc;
+					border-radius: 30rpx;
 					position: relative;
 					.icon-more {
+						width: 56rpx;
+						height: 38rpx;
+						background: #ffffff;
+						border-radius: 10rpx;
+						box-shadow: 3rpx 3rpx 8rpx 0rpx rgba(107,102,152,0.10); 
 						position: absolute;
 						right: 20rpx;
-						top: 10rpx;
+						top: 20rpx;
+						text-align: center;
+						.points {
+							display: inline-block;
+							width: 8rpx;
+							height: 8rpx;
+							background: #000000;
+							border-radius: 50%;
+							margin: 0 2rpx;
+							margin-bottom: 10rpx;
+						}
 					}
 				}
 				.page-item-label {
 					line-height: 60rpx;
-					font-size: 26rpx;
+					font-size: 28rpx;
+					font-family: PingFangSC, PingFangSC-Medium;
+					text-align: center;
 					margin-bottom: 10rpx;
 				}
 			}

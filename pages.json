@@ -27,8 +27,8 @@
 		"backgroundColor": "#F8F8F8",
 		"navigationStyle": "custom"
 	},
-	"uniIdRouter": {},
-	"tabBar": {
+	"uniIdRouter": {}
+	/* "tabBar": {
 		"list": [
 			{
 				"pagePath": "pages/index/index",
@@ -43,5 +43,5 @@
 				"text": "个人中心"
 			}
 		]
-	}
+	} */
 }

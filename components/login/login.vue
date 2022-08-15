@@ -7,14 +7,14 @@
 				<text v-if='!validPhone'>{{validText}}</text>
 			</view>
 			<view class="password-container">
-				<text class="valid-code-text" :class="{'gray':!sending}" @click='sendCode'>{{ codeText }}</text>
+				<text class="valid-code-text" :class="{'gray':sending}" @click='sendCode'>{{ codeText }}</text>
 				<input class="uni-input password" type="text" v-model="codeValue" placeholder="手机验证码" />
 			</view>
 			<view class="error-text">
 				<text v-if='!validCode'>{{validText2}}</text>
 			</view>
 			<button type="primary" class="login-btn" @click='login'>登录/注册</button>
-			<view class="login-msg">登录即同意<text class="blue" @click='agreement = true'>用户协议</text></view>
+			<!-- <view class="login-msg">登录即同意<text class="blue" @click='agreement = true'>用户协议</text></view> -->
 			<!-- <view class="login-msg">登录即同意<text class="blue" @click='aaa'>用户协议2</text><text class="blue" @click='aaa2'>用户协议3</text></view> -->
 		</view>
 		<agreement v-if='agreement' @click.stop='agreement = false'></agreement>
@@ -224,17 +224,20 @@
 
 		.modal {
 			width: 100%;
-			height: 500rpx;
+			height: 560rpx;
 			background: #fff;
+			border-radius: 60rpx 60rpx 0 0;
 			position: absolute;
 			bottom: 0;
 			left: 0;
 			box-sizing: border-box;
-			padding: 45rpx;
+			padding: 55rpx 45rpx 0 58rpx;
 
 			.tooltip-title {
-				font-size: 30rpx;
+				font-size: 36rpx;
+				font-family: PingFangSC, PingFangSC-Semibold;
 				font-weight: 700;
+				text-align: center;
 				margin-bottom: 45rpx;
 			}
 
@@ -242,11 +245,20 @@
 				margin-bottom: 0;
 				display: block;
 				color: #000;
+				font-size: 32rpx;
+				font-family: PingFangSC, PingFangSC-Regular;
+				font-weight: 400;
+				text-align: left;
+				color: #000000;
+				line-height: 60rpx;
+				height: 60rpx;
+				padding-bottom: 10rpx;
+				border-bottom: 2rpx solid #e3e3e3;
 			}
 
 			.error-text {
-				line-height: 45rpx;
-				height: 45rpx;
+				line-height: 48rpx;
+				height: 48rpx;
 				color: red;
 				font-size: 25rpx;
 			}
@@ -255,24 +267,35 @@
 				position: relative;
 
 				.valid-code-text {
-					position: absolute;
-					right: 0;
-					top: 0;
-
+					float: right;
+					width: 280rpx;
+					height: 70rpx;
+					line-height: 70rpx;
+					border: 1rpx solid #005cfa;
+					border-radius: 15rpx;
+					text-align: center;
+					color: #005CFA;
 					&.gray {
 						color: #ccc;
+						border: 1rpx solid #ccc;
 					}
 				}
 
 				.password {
-					width: 450rpx;
+					width: 360rpx;
+					height: 60rpx;
+					line-height: 60rpx;
 				}
 			}
 
 			.login-btn {
-				font-size: 24rpx;
+				font-size: 36rpx;
+				font-family: PingFangSC, PingFangSC-Medium;
+				text-align: center;
+				color: #ffffff;
 				padding-top: 10rpx;
 				padding-bottom: 10rpx;
+				border-radius: 30rpx;
 			}
 
 			.login-msg {

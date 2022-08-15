@@ -3,7 +3,7 @@
 		globalData:{
 		   loginInfo: null,
 		   url: 'https://test.dycharts.com/',
-		   back: null
+		   backUserInfo: null
 		},
 		onLaunch: function() {
 			//调用获取用户信息接口，判断用户是否登录
